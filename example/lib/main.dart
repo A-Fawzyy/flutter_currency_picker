@@ -11,7 +11,6 @@ class MyApp extends StatelessWidget {
       title: 'Demo for currency picker package',
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-      locale: const Locale('ar'),
       supportedLocales: [
         const Locale('en'),
         const Locale('ar'),
@@ -66,7 +65,7 @@ class HomePage extends StatelessWidget {
             showCurrencyPicker(
               context: context,
               showFlag: true,
-              searchLabel: 'بحث',
+              searchLabel: 'Search',
               showSearchField: true,
               showCurrencyName: true,
               showCurrencyCode: true,
