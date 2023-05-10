@@ -1,3 +1,5 @@
+import 'currency_parser.dart';
+
 class Currency {
   ///The currency code
   final String code;
@@ -76,4 +78,12 @@ class Currency {
         'thousands_separator': thousandsSeparator,
         'space_between_amount_and_symbol': spaceBetweenAmountAndSymbol,
       };
+
+  static Currency parse(String currency) {
+    return CurrencyParser.parse(currency);
+  }
+
+  static Currency? tryParse(String currency) {
+    return CurrencyParser.tryParse(currency);
+  }
 }

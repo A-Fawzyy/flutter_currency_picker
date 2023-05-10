@@ -1,3 +1,4 @@
+import 'package:currency_picker/src/currency_localizations.dart';
 import 'package:currency_picker/src/extensions.dart';
 import 'package:flutter/material.dart';
 
@@ -39,6 +40,11 @@ class CurrencyListView extends StatefulWidget {
   /// Defaults true.
   final bool showCurrencyCode;
 
+  /// Shows currency Symbol (optional).
+  ///
+  /// Defaults true.
+  final bool showCurrencySymbol;
+
   /// To disable the search TextField (optional).
   final bool showSearchField;
 
@@ -46,6 +52,11 @@ class CurrencyListView extends StatefulWidget {
   ///
   /// Defaults Search.
   final String? searchHint;
+
+  /// Label of the search TextField (optional).
+  ///
+  /// Defaults Search.
+  final String? searchLabel;
 
   final ScrollController? controller;
 
@@ -62,8 +73,10 @@ class CurrencyListView extends StatefulWidget {
     this.currencyFilter,
     this.showSearchField = true,
     this.searchHint,
+    this.searchLabel,
     this.showCurrencyCode = true,
     this.showCurrencyName = true,
+    this.showCurrencySymbol = true,
     this.showFlag = true,
     this.physics,
     this.controller,
@@ -124,8 +137,8 @@ class _CurrencyListViewState extends State<CurrencyListView> {
               ? TextField(
                   controller: _searchController,
                   decoration: InputDecoration(
-                    labelText: widget.searchHint ?? "Search",
-                    hintText: widget.searchHint ?? "Search",
+                    labelText: widget.searchLabel ?? '',
+                    hintText: widget.searchHint ?? '',
                     prefixIcon: const Icon(Icons.search),
                     border: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -198,7 +211,8 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                           ],
                           if (widget.showCurrencyName) ...[
                             Text(
-                              currency.name,
+                              CurrencyLocalizations.of(context)?.currencyName(code: currency.code)?.replaceAll(RegExp(r"\s+"), " ") ??
+                                  currency.name,
                               style: widget.showCurrencyCode
                                   ? subtitleTextStyle
                                   : titleTextStyle,
@@ -210,6 +224,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                   ],
                 ),
               ),
+              if(widget.showCurrencySymbol)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(

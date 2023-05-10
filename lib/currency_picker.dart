@@ -10,6 +10,8 @@ export 'package:currency_picker/src/currency.dart';
 export 'package:currency_picker/src/currency_picker_theme_data.dart';
 export 'package:currency_picker/src/currency_service.dart';
 export 'package:currency_picker/src/currency_utils.dart';
+export 'src/currency_localizations.dart';
+export 'src/currency_parser.dart';
 
 /// Show currency picker
 ///
@@ -53,10 +55,12 @@ void showCurrencyPicker({
   List<String>? favorite,
   List<String>? currencyFilter,
   String? searchHint,
+  String? searchLabel,
   bool showSearchField = true,
   bool showFlag = true,
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
+  bool showCurrencySymbol = true,
   bool useRootNavigator = false,
   ScrollPhysics? physics,
   CurrencyPickerThemeData? theme,
@@ -70,9 +74,11 @@ void showCurrencyPicker({
     onSelect: onSelect,
     showSearchField: showSearchField,
     searchHint: searchHint,
+    searchLabel: searchLabel,
     showFlag: showFlag,
     showCurrencyName: showCurrencyName,
     showCurrencyCode: showCurrencyCode,
+    showCurrencySymbol: showCurrencySymbol,
     useRootNavigator: useRootNavigator,
     favorite: favorite,
     currencyFilter: currencyFilter,
