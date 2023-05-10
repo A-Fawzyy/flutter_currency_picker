@@ -1,6 +1,7 @@
-import 'package:collection/collection.dart' show IterableExtension;
-import 'package:currency_picker/src/currencies.dart';
-import 'package:currency_picker/src/currency.dart';
+import 'package:collection/collection.dart';
+
+import 'currencies.dart';
+import 'currency.dart';
 
 class CurrencyService {
   final List<Currency> _currencies;

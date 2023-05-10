@@ -1,7 +1,87 @@
-## [2.0.5] - 23 Aug 2021
-* Fix `name_plural` of the Euros
+## 2.0.16
+* Add more currencies:
+  - Tunisian dinar
 
-## [2.0.4] - 05 May 2021
+## 2.0.15
+* Add more currencies:
+  - West African CFA franc
+* Add parameter `useRootNavigator`
+  ``` Dart
+   showCurrencyPicker(
+     context: context,
+     useRootNavigator: true,
+     onSelect: (Currency currency) => print('Select currency: ${currency.name}'),
+   );
+  ```
+* Update dependencies
+## 2.0.14
+* Add more currencies:
+  - Zambian Kwacha
+  - Jordanian Dinar
+  - Kyrgystani Som
+* Remove currencies:
+  - Croatia Kuna
+## 2.0.13
+* Add more currencies:
+  - Algerian dinar
+* Add `currencySignTextStyle`:
+    ```Dart
+       showCurrencyPicker(
+         context: context,
+         theme: CurrencyPickerThemeData(
+           currencySignTextStyle: TextStyle(color: Colors.red, fontSize: 25),
+         ),
+         onSelect: (Currency currency) => print('Select currency: ${currency.name}'),
+       );
+    ```
+## 2.0.12
+* Add more currencies:
+  - Congolese franc
+  - Guatemalan quetzal
+  - Myanmar Kyat
+
+## 2.0.11
+* Add more currencies:
+  - Rwandan franc
+  - Haitian gourde
+* Add `showSearchField`: Option to show/hide the search TextField.
+* Add option for bottom sheet height.
+    ```Dart
+       showCurrencyPicker(
+         context: context,
+         theme: CurrencyPickerThemeData(
+           bottomSheetHeight: MediaQuery.of(context).size.height / 2,
+         ),
+         onSelect: (Currency currency) => print('Select currency: ${currency.name}'),
+       );
+    ```
+
+## 2.0.10
+* Add more currencies:
+  - Cambodian riel
+  - Central African CFA franc
+* Remove duplicated currency BYN
+
+## 2.0.9
+* Add more currencies:
+  - Seychellois rupee
+  - Bosnia and Herzegovina convertible mark
+
+## 2.0.8
+* Add the Syrian Pound 
+* Fix `name` for South Korea
+
+## 2.0.7
+* Fix `code` for Burundian Franc
+* Fix `name` and  `name_plural`for Brazilian Real
+
+## 2.0.6
+* Fix `name_plural` for Suriname Dollar
+
+## 2.0.5
+* Fix `name_plural` for Euros
+
+## 2.0.4
 * Implemented currency picker theme 
   ```Dart
    showCurrencyPicker(
@@ -18,11 +98,11 @@
   ``` 
 * Add `ScrollPhysics` parameter
 
-## [2.0.3] - 20 Mar 2021
+## 2.0.3
 * Add toJson in currency model
 * Fix incorrect currency symbols
 
-## [2.0.2] - 18 Mar 2021
+## 2.0.2
 
 * Add more currency info:
   - Decimal digits 
@@ -39,7 +119,7 @@
   - Botswanan Pula
   - Belarussian Ruble
 
-## [2.0.1] - 12 Mar 2021
+## 2.0.1
 
 * Add `favorite` option.
   - Can be used to to show the favorite currencies at the top of the list.
@@ -53,19 +133,19 @@
       favorite: <String> ['EUR', 'GBP', 'USD'],
     );
     ```
-## [2.0.0] - 05 Mar 2021
+## 2.0.0
 
  * Migrated to null safety
  
-## [1.0.6] - 28 Jan 2021
+## 1.0.6
 
  * Updating documentation
  
-## [1.0.5] - 22 Jan 2021
+## 1.0.5
 
  * Sort currencies list according to [most traded currencies](https://en.wikipedia.org/wiki/Template:Most_traded_currencies)
 
-## [1.0.4] - 22 Dec 2020
+## 1.0.4
 
  * `searchHint`: Option to customize hint of the search TextField
  * `showCurrencyName`: Option to show/hide the currency name
@@ -85,7 +165,7 @@ showCurrencyPicker(
 
 Note: `showCurrencyCode` and `showCurrencyName` cannot be both false
 
-## [1.0.3] - 09 Dec 2020
+## 1.0.3
 
 * Add option to show flag for each currency.
     ```Dart
@@ -98,7 +178,7 @@ Note: `showCurrencyCode` and `showCurrencyName` cannot be both false
     );
     ``` 
 
-## [1.0.2] - 25 Nov 2020
+## 1.0.2
 
 * Deprecated showCurrencyListBottomSheet. Use `showCurrencyPicker` instead.
 * Add currency filter option.
@@ -114,11 +194,11 @@ Note: `showCurrencyCode` and `showCurrencyName` cannot be both false
       );
       ``` 
 
-## [1.0.1] - 15 Nov 2020
+## 1.0.1
 
 * Implement search.
 * Implement CurrencyService
 
-## [1.0.0] - 31 Oct 2020
+## 1.0.0
 
 * Initial developers preview release.

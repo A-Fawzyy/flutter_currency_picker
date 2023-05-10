@@ -11,7 +11,7 @@ class Currency {
   ///The currency flag code
   ///
   /// To get flag unicode(Emoji) use [CurrencyUtils.currencyToEmoji]
-  final String flag;
+  final String? flag;
 
   ///The currency number
   final int number;
@@ -33,6 +33,8 @@ class Currency {
 
   ///True if symbol has space with amount
   final bool spaceBetweenAmountAndSymbol;
+
+  bool get isFlagImage => flag?.endsWith('.png') ?? false;
 
   Currency({
     required this.code,

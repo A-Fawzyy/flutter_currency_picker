@@ -28,6 +28,7 @@ class HomePage extends StatelessWidget {
             showCurrencyPicker(
               context: context,
               showFlag: true,
+              showSearchField: true,
               showCurrencyName: true,
               showCurrencyCode: true,
               onSelect: (Currency currency) {
